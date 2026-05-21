@@ -351,7 +351,7 @@ async function handleJsonImport() {
   if (!json) { jsonStatus.value = 'Pega el JSON primero'; jsonStatusOk.value = false; return }
   jsonImporting.value = true; jsonStatus.value = 'Importando...'; jsonStatusOk.value = true
   try {
-    const items = typeof JSON.parse(json) === 'array' ? JSON.parse(json) : [JSON.parse(json)]
+    const parsed = JSON.parse(json); const items = Array.isArray(parsed) ? parsed : [parsed]
     let ok = 0, err = 0
     for (const item of items) {
       try {
