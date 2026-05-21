@@ -1,4 +1,4 @@
-const API_BASE = '/api'
+const API_BASE = import.meta.env.PROD ? 'https://ps2desktop-api.vercel.app/api' : '/api'
 
 function getToken(): string | null {
   return localStorage.getItem('token')
