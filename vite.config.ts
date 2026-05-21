@@ -6,7 +6,7 @@ import { defineConfig } from 'vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/tailadmin-vuejs/' : '/',
+  base: '/',
   plugins: [vue(), vueJsx(), vueDevTools()],
   resolve: {
     alias: {
